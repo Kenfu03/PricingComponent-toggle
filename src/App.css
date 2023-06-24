@@ -2,15 +2,20 @@
   display: flex;
   background-color: var(--very-light-grayish-blue);
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: auto;
-  background-repeat: no-repeat;
-  background-position: 175px -50px;
 }
 
 @media (width > 375px){
   .principal-container {
     height: 100vh;
+  }
+
+  .principal-container main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
   }
 }

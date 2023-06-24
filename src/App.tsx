@@ -1,14 +1,14 @@
-import './App.css'
-import { PricingWithToggle } from './components'
-import topBg from "./assets/images/bg-top.svg"
+import "./App.css";
+import { PricingWithToggle, Navbar } from "./components";
 
 function App() {
-
   return (
-    <div className="principal-container" style={{backgroundImage: `url(${topBg})`}}>
-      <header>navbar</header>
+    <div className="principal-container">
+      <header>
+        <Navbar />
+      </header>
       <main>
-        <PricingWithToggle/>
+        <PricingWithToggle />
       </main>
       <footer>
         Challenge by{" Kenfu03 "}
@@ -16,7 +16,10 @@ function App() {
           Frontend Mentor
         </a>
         . Coded by{" Kenneth Fuentes "}
-        <a target="_blank" href="https://github.com/Kenfu03/PricingComponent-toggle">
+        <a
+          target="_blank"
+          href="https://github.com/Kenfu03/PricingComponent-toggle"
+        >
           Kenfu03
         </a>
         .
@@ -25,4 +28,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

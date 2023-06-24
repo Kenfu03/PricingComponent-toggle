@@ -1,11 +1,8 @@
 import { useState } from "react";
 import "./PricingWithToggle.css";
 import { PricingComponent } from "../../containers";
+import { topBg, bottonBg } from "../../assets";
 
-
-interface StyleTypes {
-  justifyContent: "flex-start" | "flex-end";
-}
 
 interface PriceInfoTypes {
   tittle: string;
@@ -19,9 +16,7 @@ const PricingWithToggle = () => {
   const [basicPrice, setBasicPrice] = useState<string>("199.99");
   const [professionalPrice, setProfessionalPrice] = useState<string>("249.99");
   const [masterPrice, setMasterPrice] = useState<string>("399.99");
-  const [buttonStyle, setButtonStyle] = useState<StyleTypes>({
-    justifyContent: "flex-start",
-  });
+  const [anual, setAnual] = useState<boolean>(true);
   const pricingObjects: PriceInfoTypes[] = [
     {
       tittle: "Basic",
@@ -58,29 +53,19 @@ const PricingWithToggle = () => {
     setMasterPrice("39.99");
   };
 
-  const handleClick = () => {
-    if (buttonStyle.justifyContent === "flex-start") {
-      setButtonStyle({
-        justifyContent: "flex-end",
-      });
-      monthlyPrice();
-    } else {
-      setButtonStyle({
-        justifyContent: "flex-start",
-      });
-      anuallyPrice();
-    }
-  };
   return (
-    <div className="pricing-container">
+    <div className="pricing-container" style={{ backgroundImage: `url(${topBg}),url(${bottonBg})` }}>
       <div className="pricing-tittle-container">
         <h1>Our Pricing</h1>
         <div className="button-container">
           <p>Annually</p>
           <div
             className="switch"
-            style={buttonStyle}
-            onClick={() => handleClick()}
+            style={{ justifyContent: anual ? "flex-start" : "flex-end" }}
+            onClick={() => {
+              anual ? monthlyPrice() : anuallyPrice();
+              setAnual(!anual);
+            }}
           >
             <div className="circle"></div>
           </div>
