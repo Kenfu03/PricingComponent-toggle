@@ -1,9 +1,10 @@
 import "./App.css";
 import { PricingWithToggle, Navbar } from "./components";
+import { topBg, bottonBg } from "./assets";
 
 function App() {
   return (
-    <div className="principal-container">
+    <div className="principal-container" style={{ backgroundImage: `url(${topBg}),url(${bottonBg})` }}>
       <header>
         <Navbar />
       </header>
@@ -20,7 +21,7 @@ function App() {
           target="_blank"
           href="https://github.com/Kenfu03/PricingComponent-toggle"
         >
-          Kenfu03
+          GitHub
         </a>
         .
       </footer>

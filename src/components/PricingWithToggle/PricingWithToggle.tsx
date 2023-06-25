@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./PricingWithToggle.css";
 import { PricingComponent } from "../../containers";
-import { topBg, bottonBg } from "../../assets";
 
 
 interface PriceInfoTypes {
@@ -54,7 +53,9 @@ const PricingWithToggle = () => {
   };
 
   return (
-    <div className="pricing-container" style={{ backgroundImage: `url(${topBg}),url(${bottonBg})` }}>
+    <div
+      className="pricing-container"
+    >
       <div className="pricing-tittle-container">
         <h1>Our Pricing</h1>
         <div className="button-container">
@@ -73,8 +74,9 @@ const PricingWithToggle = () => {
         </div>
       </div>
       <div className="pricing-data-container">
-        {pricingObjects.map((container: PriceInfoTypes) => (
+        {pricingObjects.map((container: PriceInfoTypes, i: number) => (
           <PricingComponent
+            key={i}
             tittle={container.tittle}
             price={container.price}
             storage={container.storage}

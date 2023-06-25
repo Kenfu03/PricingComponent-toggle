@@ -5,17 +5,30 @@
   align-items: center;
   justify-content: space-between;
   height: auto;
+  background-repeat: no-repeat;
+  background-position: 180px 0px, bottom;
 }
 
-@media (width > 375px){
+header {
+  width: 100%;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+@media (width > 915px){
   .principal-container {
     height: 100vh;
+    background-position: 80% 70px, 18% 95%;
+
   }
 
   .principal-container main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+
   }
 }

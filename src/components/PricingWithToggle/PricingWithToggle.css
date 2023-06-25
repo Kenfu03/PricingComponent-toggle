@@ -2,10 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   gap: 40px;
-  background-repeat: no-repeat;
-  background-position: 165px -60px, bottom;
 }
 
 .pricing-tittle-container {
@@ -59,9 +57,9 @@
   gap: 40px;
 }
 
-@media (width > 375px) {
+@media (width > 915px) {
   .pricing-container {
-    background-position: 200px, bottom left;
+    padding-bottom: 40px;
   }
 
   .pricing-tittle-container {
